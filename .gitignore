@@ -5,6 +5,8 @@
 [Oo]bj/
 [Bb]uild
 [Ll]ibrary/
+[Gg]_[Dd]ata/
+.dll
 sysinfo.txt
 *.stackdump
  
