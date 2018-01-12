@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2034110724, guid: e915c74e1c72d7449bcfaa622335b980, type: 3}
+  m_Name: DiagonalXY
+  m_EditorClassIdentifier: 
+  PlanarSensor:
+    receptors:
+    - structure:
+        Position: {x: 0, y: 0, z: 0}
+        Direction: {x: 0.7071068, y: 0.7071068, z: 0}
+        Magnitude: 1
+        Sensitivity: 90
+      id: 0
+      neighbourIDs: ffffffffffffffff
+    - structure:
+        Position: {x: 0, y: -0, z: 0}
+        Direction: {x: 0.7071068, y: -0.7071068, z: 0}
+        Magnitude: 1
+        Sensitivity: 90
+      id: 1
+      neighbourIDs: ffffffffffffffff
+    - structure:
+        Position: {x: -0, y: -0, z: 0}
+        Direction: {x: -0.7071068, y: -0.7071068, z: 0}
+        Magnitude: 1
+        Sensitivity: 90
+      id: 2
+      neighbourIDs: ffffffffffffffff
+    - structure:
+        Position: {x: -0, y: 0, z: 0}
+        Direction: {x: -0.7071068, y: 0.7071068, z: 0}
+        Magnitude: 1
+        Sensitivity: 90
+      id: 3
+      neighbourIDs: ffffffffffffffff
+    planarOrientation: 0
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    inverseRotation: {x: 0, y: 0, z: 0, w: 1}

@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: e915c74e1c72d7449bcfaa622335b980
+labels:
+- AI
+- Artificial
+- Intelligence
+- Autonomous
+- Movement
+- Context
+- Steering
+timeCreated: 1472802422
+licenseType: Store
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder:
+    Polarith.AI.Move.AIMArrive: 200
+    Polarith.AI.Move.AIMFollow: 100
+    Polarith.AI.Move.AIMSeek: 300
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 1
+      settings: {}
+    Editor:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+    WindowsStoreApps:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,212 @@
+<h1>Changelog</h1>
+<h2>[v1.5.1] After Patch Fixing</h2>
+<h3>Changes</h3>
+<ul>
+<li>When using a prediction method for a steering behaviour, circle gizmos are now displayed at the predicted position</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>AIMWander: Works again now, was broken after the introduction of the better self-recognition</li>
+</ul>
+<h2>[v1.5] Performance and Usability</h2>
+<h3>Changes</h3>
+<ul>
+<li><strong>[Pro]</strong> With this patch, we laid the foundation for new formation components arriving in the next patches</li>
+<li>All Polarith AI inspectors are now Unity-conform, especially all foldouts and tabs</li>
+<li>All enhancements and fixes allow for great example and demo creation in future patches</li>
+<li>The core steering algorithms are now deterministic when the whole application infrastructure is deterministic as well, have a look at the corresponding manual page</li>
+</ul>
+<h3>Enhancements</h3>
+<ul>
+<li><strong>[Pro]</strong> Added AIMPerformance, a new component that replaces AIMThreading and provides further performance optimizations</li>
+<li><strong>[Pro]</strong> AIMPerformance: Added single-threaded load balancing which equally distributes agent updates over the available frames</li>
+<li>Added AIMContextEvaluation: By inheriting from this class, you have full control over the update cycle of all AIMContext instances within the scene</li>
+<li>AIMSteeringPerceiver: Implemented spatial hashing using a regular grid to improve the performance of the overall perception pipeline</li>
+<li>AIMSteeringPerceiver: Implemented lazy percept receiving such that a percept is processed only if it is really relevant to at least one agent, this improves the overall performance</li>
+<li>AIMSteeringFilter: Added a Range parameter that filters percepts before they are processed by a behaviour, this can improve the performance a lot</li>
+<li>AIMSteeringTag: Added a Radius parameter to improve the handling of differently sized objects, so the same parameters can now be used for different object sizes</li>
+<li>Added LayerBlending and LayerNormalization: All AIMSteeringBehaviour components are now able to store their intermediate results, these can then be normalized or applied to the Context using a different operation, this allows for a much more powerful behaviour combination to easily achieve boids, herds etc.</li>
+<li>All AIMSteeringBehaviour and AIMReduction components can now predict their own future position based on fixed parameters or their actual velocity</li>
+<li>Implemented a better self-recognition so that a percept representing the agent itself is ignored by behaviours (no need to have an inner radius for this purpose any longer)</li>
+<li>Optimized the velocity tracking: When the velocity reaches the zero vector, the last valid non-zero vector is used to provide at least a valid direction</li>
+<li>Instead of using a tracked or physics-related velocity, it is now possible to let the behaviour use a direction based on its rotation (most behaviours only need the direction and not the magnitude of the velocity vector)</li>
+<li>Added a button to the behaviour inspectors that displays or hides more advanced options to improve the overall user experience</li>
+<li>Added the two special predefined sensors LeftRightXY and DiagonalXY which might be useful for certain 2D setups but impossible to create without having AIMPlanarShaper</li>
+<li>Improved the documentation content, look and feel</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li><strong>[Pro]</strong> AIMFollowPath and AIMFollowWaypoints: Fixed a bug which prevented the Points property from setting data when there was no AIMPathConnector (thanks Joe)</li>
+<li><strong>[Pro]</strong> AIMPlanarShaper: Fixed a problem that occurred because of API changes in Unity 5.6</li>
+<li><strong>[Pro]</strong> PlanarSeekBounds: Fixed a bug that led to wrong results when using a significance value other than 1</li>
+<li>AIMContext: Fixed an error that occurred sporadically within the inspector</li>
+<li>AIMContext: Fixed a bug which led to an annoying flickering of the indicator gizmo</li>
+<li>AIMAvoid: Fixed the velocity warning that was shown even when there was a valid velocity source</li>
+<li>AIMAvoid and MoveBehaviour: Fixed the method MapBySensitivityPlane() which had problems with any other transform scale than (1, 1, 1)</li>
+</ul>
+<h2>[v1.4.3] Stabilization Fix</h2>
+<h3>Enhancements</h3>
+<ul>
+<li>AIMStabilization: Improved the default value of the parameter MaxIncrease</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>AIMStabilization: Fixed a bug that caused Stabilization to not work correctly (thanks Anthony for pointing this out)</li>
+</ul>
+<h2>[v1.4.2] Pathfinder Fixes</h2>
+<h3>Enhancements</h3>
+<ul>
+<li>Optimized component inspectors for Unity’s dark skin</li>
+<li>Documentation: Improved spacing of headlines and diagrams for a better readability</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li><strong>[Pro]</strong> AIMLinearPath: Fixed a bug which made it impossible to edit path points interactively in-scene</li>
+<li><strong>[Pro]</strong> AIMFollowWaypoints: This behaviour is now properly marked as thread-safe</li>
+<li><strong>[Pro]</strong> Fixed documentation links for all path-related components</li>
+<li><strong>[Pro]</strong> Fixed menu entries for all path-related components</li>
+<li>AIMContext: Fixed a bug which caused the indicator gizmo to flicker sometimes while an agent is selected</li>
+</ul>
+<h2>[v1.4.1] Pathfinder Improvements</h2>
+<h3>Enhancements</h3>
+<ul>
+<li><strong>[Pro]</strong> AIMFollowWaypoints: Added a property called Patrol for setting up what to do when the end of a path has been reached</li>
+<li><strong>[Pro]</strong> AIMLinearPath: Improved the selection mechanism of path points so that other game objects are still selectable while a path object is selected</li>
+<li><strong>[Pro]</strong> AIMLinearPath: Added a new selection box shortcut (Ctrl + LMB + Drag) for selecting path points</li>
+<li>Minor inspector improvements concerning foldouts</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li><strong>[Pro]</strong> Fixed AIMPlanarShaper so that it now works correctly for all supported Unity versions</li>
+<li>Updated the offline documentation to v1.4</li>
+</ul>
+<h2>[v1.4] Pathfinder</h2>
+<h3>Changes</h3>
+<ul>
+<li><strong>[Pro]</strong> Added AIMFollowWaypoints behaviour to follow a path or an arbitrary collection of points</li>
+<li><strong>[Pro]</strong> Added AIMLinearPath for quickly creating your own paths or patrols</li>
+<li><strong>[Pro]</strong> Added AIMUnityPathfinding, an adapter for Unity’s NavMesh system so that AIMFollowWaypoints can utilize this information</li>
+<li><strong>[Pro]</strong> Extended overall API such that the AIMFollowWaypoints behaviour can be easily used with your custom Pathfinding solution</li>
+</ul>
+<h3>Enhancements</h3>
+<ul>
+<li>Improved custom editors, they now follow Unity’s standard with respect to multi-selection and prefab emphasizing</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>Fixed a bug which broke the multi-selection capabilities of custom editors (if you implemented your own editor based on AIMBehaviourEditor, you need to override the BehaviourProperty)</li>
+<li>Fixed a bug where Unity crashed on calling Polarith AI API methods in a specific order (AIMContext.ResizeObjectives, thanks Simon for pointing this out)</li>
+<li>Fixed a bug in AIMContext which caused the indicator gizmo to flicker based on the set UpdateFrequency</li>
+<li>Fixed the PlaneGizmo such that it is consistent with our other gizmos</li>
+</ul>
+<h2>[v1.3] Free versus Pro</h2>
+<h3>Changes</h3>
+<ul>
+<li>Polarith AI is now Polarith AI Pro, furthermore, we now provide a Free version in the store as well</li>
+<li>Adapted the documentation for the new Free and Pro versions</li>
+<li>Added source code of our controller components</li>
+<li><strong>[Pro]</strong> Every Pro component now have a Pro label icon</li>
+</ul>
+<h3>Enhancements</h3>
+<ul>
+<li><strong>[Pro]</strong> AIMSeekNavMesh, AIMFleeNavMesh: Improved editors, they now show a proper bitfield for AreaMask instead of just an integer</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>Fixed a bug in our custom editor system which made proper multi-object editing impossible</li>
+<li>Fixed a bug in character controller editors which caused the value of ObjectiveAsSpeed to be reset at runtime</li>
+<li>AIMPhysicsController2D: Removed the unnecessary dependency to Rigidbody2D so that it can be decoupled properly from the actual physics object</li>
+</ul>
+<h2>[v1.2.5] Asynchronous Load Balancing</h2>
+<h3>Changes</h3>
+<ul>
+<li>AIMContext: The Spacing in the indicator settings is now constraint to a minimum of 1</li>
+</ul>
+<h3>Enhancements</h3>
+<ul>
+<li>AIMContext: Improved UI look and feel</li>
+<li>AIMPlanarShaper: Improved UI look and feel</li>
+<li>AIMThreading: Advanced asynchronous load balancing</li>
+<li>AIMFollow, AIMArrive, AIMOrbit, AIMAlign: Added tags for assigning game objects</li>
+<li>Documentation: Added syntax highlighting support for code snippets</li>
+<li>Examples: Added scene for demonstrating the functionality of AIMLodGroup</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>AIMContext: Fixed a bug in the wizard where the default perceiver was not correctly detected</li>
+<li>AIMContext: The Custom Scale in the indicator visualization of the result direction is now considered correctly</li>
+<li>AIMSeekNavMesh: Minor UI improvements</li>
+<li>Documentation: Minor corrections (links etc.)</li>
+</ul>
+<h2>[v1.2] Usability Boost</h2>
+<h3>Changes</h3>
+<ul>
+<li>AIMStabilization: The last decision is used as reference direction instead of the last direction the agent faced</li>
+</ul>
+<h3>Enhancements</h3>
+<ul>
+<li>Brand-new and extensible inspector interface which boosts up the general workflow</li>
+<li>Components now support correct help URLs which reference to the online documentation</li>
+<li>General usability improvements making the general workflow less error-prone (parameter checks, info boxes etc.)</li>
+<li>Added level-of-detail component AIMLodGroup supporting automatic sensor switching for different distances</li>
+<li>Added new avoidance component AIMAvoid which is an improvement and generalization of the planar version (it supports full 3D sensors in the future)</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>The objective normalization has no discontinuities anymore</li>
+<li>Vector projection of OBBs was not working correctly for certain cases, but now it does</li>
+<li>The bounds of a percept are now correctly extracted (before, they were in wrong space for certain cases)</li>
+<li>AIMArrive: Gizmos in 3D were not visualized correctly, but now they are</li>
+<li>AIMSimpleController: Fixed an error which could occur by setting an ObjectiveAsSpeed</li>
+</ul>
+<h2>[v1.1.2] The Fix of Shame</h2>
+<h3>Changes</h3>
+<ul>
+<li>Removed everything concerning the path structure until it is polished (we found some serious bugs to be present and decided to re-publish it later, a big SORRY)</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>Repaired gizmo functionality</li>
+</ul>
+<h2>[v1.1.1] Critical Hotfix</h2>
+<h3>Fixes</h3>
+<ul>
+<li>Fixed critical bug preventing the build of full application executables</li>
+</ul>
+<h2>[v1.1] Path Structure</h2>
+<h3>Changes</h3>
+<ul>
+<li>Polarith AI now requires at least Unity 5.3.0</li>
+</ul>
+<h3>Enhancements</h3>
+<ul>
+<li>Path Structure: Added component AIMLinearPath for easily creating and modifying linear paths</li>
+<li>Behaviour: Added AIMFollowPathDiscrete and AIMFollowPathContinuous for letting agents follow or patrolling on paths, e.g. an AIMLinearPath</li>
+<li>Colors: Added static class for collecting all default colors used by Polarith</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>AIMSteeringFilter: Set the default value of ObjectTag to “Untagged” for preventing broken setups</li>
+<li>AIMSteeringFilter: Fixed an issue where an exception was thrown if an AIMSteeringPerceiver was not attached</li>
+<li>AIMPursue: Fixed Typo in AIMPursue (in Unity’s component menu, it was named AIMPursu)</li>
+</ul>
+<h2>[v1.0.1] Release Bug Fixing</h2>
+<h3>Enhancements</h3>
+<ul>
+<li>AIMEnvironment can now use Unity’s layer system to define perceived objects.</li>
+<li>It is now possible to change the sensor’s planar orientation in AIMPlanarShaper.</li>
+<li>AIMContext indicator now considers the object scale.</li>
+<li>Eliminated a remaining GetComponent call in the main update loop which caused 500 KByte of GC in editor mode.</li>
+<li>Added a hierarchical distance check for the boundary behaviours to improve both performance and precision. Agents now use a fast approximation to check whether an object is relevant, and if it is, a more expensive but precise method is applied.</li>
+<li>The general performance was improved to a noticeable degree.</li>
+<li>Introduced new API methods for easily accessing epsilon constraints directly via AIMContext.</li>
+</ul>
+<h3>Fixes</h3>
+<ul>
+<li>The AIMPlanarInterpolator did not correctly consider if a target objective is to be minimized or maximized.</li>
+<li>Using static game objects led to major problems when using behaviours which need visual bounds information.</li>
+<li>Spread parameter in AIMPlanarSeekBounds and AIMPlanarFleeBounds did not work properly.</li>
+<li>Eliminated an exception caused by the AIMContext indicator in the editor when using ShowReceptors.</li>
+<li>Removed obsolete parameter (DistanceMapping) in AIMOrbit.</li>
+<li>Fixed a bug in AIMContext leading to an unhandled exception while the minus button was pushed and there were no objectives.</li>
+</ul>
