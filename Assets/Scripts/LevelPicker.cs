@@ -21,8 +21,7 @@ public class LevelPicker: MonoBehaviour {
 	}
 	public void LoadLevel(int levelName)
 	{
-
-		Debug.Log(levelName);
+		SceneManager.LoadScene(LevelScenePrefix + levelName);
 	}
 	public void NextLevel()
 	{
