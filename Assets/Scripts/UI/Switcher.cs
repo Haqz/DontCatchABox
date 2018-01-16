@@ -11,7 +11,7 @@ public class Switcher : MonoBehaviour
     [SerializeField]
     private RectTransform[] levels;
     [SerializeField]
-    private int currentLevel;
+    public int currentLevel;
     [SerializeField]
     private Text levelNumberText;
 
