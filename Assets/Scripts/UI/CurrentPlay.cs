@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(AudioClip))]
+
 public class CurrentPlay : MonoBehaviour
 {
+	private AudioClip music;
+	public Switcher level;
+	public MusicHolder[] songs;
+	int curr;
+	public AudioSource audio;
 
-	public AudioClip[] musics;
-	public GameObject[] levels;
-
-	void Start()
+	void Update()
 	{
-
+		curr = level.currentLevel;
+		music = songs[curr].music;
 	}
+	
 }

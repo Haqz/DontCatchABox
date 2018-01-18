@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Switcher : MonoBehaviour
 {
@@ -15,21 +16,34 @@ public class Switcher : MonoBehaviour
     [SerializeField]
     private Text levelNumberText;
 
+	private MusicHolder[] level;
+	private AudioClip music;
+	public AudioSource audio;
 
-    // Use this for initialization
-    void Start()
-    {
-        levels = new RectTransform[levelParent.childCount];
-        for (int i = 0; i < levelParent.childCount; i++)
-        {
-            levels[i] = levelParent.GetChild(i).GetComponent<RectTransform>();
-        }
 
-        levelParent.localPosition = new Vector3(0, levelParent.localPosition.y);
-
-    }
-
-    public void Next()
+	// Use this for initialization
+	void Start()
+	{
+		levels = new RectTransform[levelParent.childCount];
+		level = GetComponentsInChildren<MusicHolder>();
+		for (int i = 0; i < levelParent.childCount; i++)
+		{
+			levels[i] = levelParent.GetChild(i).GetComponent<RectTransform>();
+		}
+		for (int i = 0; i < level.Length; i++)
+		{
+			Debug.Log(level[i]);
+		}
+		
+		levelParent.localPosition = new Vector3(0, levelParent.localPosition.y);
+		MusicUpdate(currentLevel);
+	}
+	public void Play(int i)
+	{
+		i = currentLevel;
+		SceneManager.LoadScene(level[i].scene.name);
+	}
+	public void Next()
     {
 		if (currentLevel == levels.Length-1)
 		{
@@ -41,6 +55,7 @@ public class Switcher : MonoBehaviour
 
 			currentLevel++;
 			UpdateLevel();
+			MusicUpdate(currentLevel);
 		}
         
     }
@@ -54,11 +69,19 @@ public class Switcher : MonoBehaviour
 		{
 			currentLevel--;
 			UpdateLevel();
+			MusicUpdate(currentLevel);
 		}
 
 	}
+	public void MusicUpdate(int i)
+	{
+		music = level[i].music;
+		audio.Stop();
+		audio.clip = music;
+		audio.Play();
+	}
 
-    private void UpdateLevel()
+	private void UpdateLevel()
     {
         levelNumberText.text = currentLevel.ToString();
         StartCoroutine(Lerp(levelParent.localPosition.x, currentLevel * -levels[currentLevel].sizeDelta.x));
