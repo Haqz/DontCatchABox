@@ -8,7 +8,6 @@ public class CurrentPlay : MonoBehaviour
 	public Switcher level;
 	public MusicHolder[] songs;
 	int curr;
-	public AudioSource audio;
 
 	void Update()
 	{
