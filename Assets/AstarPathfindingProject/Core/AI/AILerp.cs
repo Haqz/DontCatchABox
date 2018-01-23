@@ -35,7 +35,7 @@ public class AILerp : VersionedMonoBehaviour {
 	 * The AI will try to follow/move towards this target.
 	 * It can be a point on the ground where the player has clicked in an RTS for example, or it can be the player object in a zombie game.
 	 */
-	public Transform target;
+	public GameObject target;
 
 	/** Enables or disables searching for paths.
 	 * Setting this to false does not stop any active path requests from being calculated or stop it from continuing to follow the current path.
@@ -202,7 +202,7 @@ public class AILerp : VersionedMonoBehaviour {
 
 		lastRepath = Time.time;
 		// This is where we should search to
-		var targetPosition = target.position;
+		var targetPosition = target.transform.position;
 		var currentPosition = GetFeetPosition();
 
 		// If we are following a path, start searching from the node we will
