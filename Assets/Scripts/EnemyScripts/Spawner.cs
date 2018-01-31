@@ -11,9 +11,11 @@ public class Spawner : MonoBehaviour {
     [Space(15)]
     public GameObject[] obj;
     public int enemyLimit = 5;
-    private void Start()
+	public Visualizer visualizer;
+	private float audiolength;
+	private void Start()
     {
-        
+		audiolength = visualizer.audioClip.length/10;
         StartCoroutine(randomSpawn());
     }
 
@@ -31,7 +33,7 @@ public class Spawner : MonoBehaviour {
         
         if (obj.Length < enemyLimit)
         {
-            for (i = 0; i < locations.Length*2; i++)
+            for (i = 0; i < audiolength; i++)
             {
             
                 int random = Random.Range(0, locations.Length);
@@ -47,4 +49,9 @@ public class Spawner : MonoBehaviour {
         
     
     }
+	void OnGUI()
+	{
+		string stringToEdit = audiolength.ToString();
+		stringToEdit = GUI.TextField(new Rect(1000, 100, 50, 25), stringToEdit, 25);
+	}
 }

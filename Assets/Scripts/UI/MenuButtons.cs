@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
 
-    void LoadLevelPicker()
+    public  void LoadLevelPicker()
     {
         SceneManager.LoadScene("levelPicker");
     }
-	void LoadOptions()
+	public  void LoadOptions()
 	{
 		SceneManager.LoadScene("options");
 	}
