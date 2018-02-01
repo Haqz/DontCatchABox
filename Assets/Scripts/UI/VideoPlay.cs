@@ -43,8 +43,8 @@ public class VideoPlay : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
 
         //Disable Play on Awake for both Video and Audio
-        videoPlayer.playOnAwake = false;
-        audioSource.playOnAwake = false;
+        videoPlayer.playOnAwake = true;
+        audioSource.playOnAwake = true;
         audioSource.Pause();
 
         //We want to play from video clip not from url

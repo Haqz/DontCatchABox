@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
 	{
 		target = GameObject.FindGameObjectWithTag("Player");
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
-		InvokeRepeating("destroyAfter", 7.0f, 0.3f);
+		InvokeRepeating("destroyAfter", 6.0f, 0.3f);
 		
 	}
 	void FixedUpdate()

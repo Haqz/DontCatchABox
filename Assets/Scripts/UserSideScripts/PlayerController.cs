@@ -6,11 +6,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed;
     public float power;
-    public float acceleration;
     public Rigidbody2D rb2D;
-    public float speed;
+    public float rotateSpeed;
 
 	public float currHP;
 	public float totalHP;
@@ -31,22 +29,18 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKey("w"))
         {
-            power = power + (power * acceleration * Time.deltaTime);
-            
             rb2D.AddForce(transform.up * power);
         } else if(Input.GetKey("s"))
         {
-            power = power + (power * acceleration * Time.deltaTime);
-
             rb2D.AddForce(-transform.up * power);
         }
         if (Input.GetKey("d"))
         {
 
-            rb2D.MoveRotation(rb2D.rotation + speed * Time.fixedDeltaTime * -1);
+            rb2D.MoveRotation(rb2D.rotation + rotateSpeed * Time.fixedDeltaTime * -1);
         } else if (Input.GetKey("a"))
         {
-            rb2D.MoveRotation(rb2D.rotation + speed * Time.fixedDeltaTime * 1);
+            rb2D.MoveRotation(rb2D.rotation + rotateSpeed * Time.fixedDeltaTime * 1);
         }
     }
 	void takeDamage()

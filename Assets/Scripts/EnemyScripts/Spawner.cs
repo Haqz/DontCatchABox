@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour {
 	private float audiolength;
 	private void Start()
     {
-		audiolength = visualizer.audioClip.length/10;
+		audiolength = visualizer.audioClip.length/2;
         StartCoroutine(randomSpawn());
     }
 
