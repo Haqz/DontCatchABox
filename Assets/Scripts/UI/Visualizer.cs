@@ -33,15 +33,15 @@ public class Visualizer : MonoBehaviour {
         m_audioSource.clip = audioClip;
 
         volume = PlayerPrefs.GetFloat("volume");
-        m_audioSource.volume = 0.2f;
+		if (PauseMenu.GameIsPaused = true)
+		m_audioSource.volume = 0.2f;
         m_audioSource.Play();
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-        spectrumData = m_audioSource.GetSpectrumData(visualizerSimples, 0, FFTWindow.Rectangular);
+		spectrumData = m_audioSource.GetSpectrumData(visualizerSimples, 0, FFTWindow.Rectangular);
         for(int i =0; i < visualizerObj.Length; i++)
         {
             Vector2 newSize = visualizerObj[i].GetComponent<RectTransform>().rect.size;
@@ -51,6 +51,7 @@ public class Visualizer : MonoBehaviour {
 
 
         }
+		
         
     }
 }
