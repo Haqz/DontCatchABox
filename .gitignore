@@ -9,7 +9,7 @@
 .dll
 sysinfo.txt
 *.stackdump
- 
+ *.mp3
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
