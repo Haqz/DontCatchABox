@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4271762241514458}
   - component: {fileID: 108723658897978642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Area Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114969019089646316}
   - component: {fileID: 50672108132620930}
   - component: {fileID: 61845272224703774}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

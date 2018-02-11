@@ -30,18 +30,14 @@ public class Switcher : MonoBehaviour
 		{
 			levels[i] = levelParent.GetChild(i).GetComponent<RectTransform>();
 		}
-		for (int i = 0; i < level.Length; i++)
-		{
-			Debug.Log(level[i]);
-		}
+		
 		
 		levelParent.localPosition = new Vector3(0, levelParent.localPosition.y);
 		MusicUpdate(currentLevel);
 	}
-	public void Play(int i)
+	public void Play()
 	{
-		i = currentLevel;
-		SceneManager.LoadScene(level[i].scene.name);
+		SceneManager.LoadScene(level[currentLevel].scene.name);
 	}
 	public void Next()
     {

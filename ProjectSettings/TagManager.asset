@@ -8,6 +8,7 @@ TagManager:
   - Spawner
   - Enemy
   - LevelPick
+  - Tile
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
+  - Tile
+  - Enemy
   - 
   - 
   - 

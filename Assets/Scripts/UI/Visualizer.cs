@@ -33,14 +33,14 @@ public class Visualizer : MonoBehaviour {
         m_audioSource.clip = audioClip;
 
         volume = PlayerPrefs.GetFloat("volume");
-		if (PauseMenu.GameIsPaused = true)
-		m_audioSource.volume = 0.2f;
+		if (PauseMenu.GameIsPaused)
         m_audioSource.Play();
 
     }
 	
 	// Update is called once per frame
 	void Update () {
+		m_audioSource.volume = DynamicOptions.sliderValue;
 		spectrumData = m_audioSource.GetSpectrumData(visualizerSimples, 0, FFTWindow.Rectangular);
         for(int i =0; i < visualizerObj.Length; i++)
         {
