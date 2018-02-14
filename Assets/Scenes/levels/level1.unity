@@ -5813,7 +5813,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668721724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -584.8, y: 501.3, z: 0}
+  m_LocalPosition: {x: -559, y: 499, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1203625887}
@@ -5821,7 +5821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -128.8, y: 501.3}
+  m_AnchoredPosition: {x: -103, y: 499}
   m_SizeDelta: {x: 171.54, y: 19.16}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &668721726
@@ -11567,7 +11567,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1431770496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -584.8, y: 501.3, z: 0}
+  m_LocalPosition: {x: -559, y: 499, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1203625887}
@@ -11575,7 +11575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -128.8, y: 501.3}
+  m_AnchoredPosition: {x: -103, y: 499}
   m_SizeDelta: {x: 171.53998, y: 19.16}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1431770498
@@ -13725,7 +13725,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1673062060}
   - component: {fileID: 1673062055}
-  - component: {fileID: 1673062059}
   - component: {fileID: 1673062058}
   - component: {fileID: 1673062057}
   - component: {fileID: 1673062056}
@@ -13793,18 +13792,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1673062054}
   m_Enabled: 1
---- !u!114 &1673062059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1673062054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f08a6f40d2ec4de981f811bfc829f87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TexturePixelsPerWorldUnit: 16
 --- !u!4 &1673062060
 Transform:
   m_ObjectHideFlags: 0
@@ -15665,7 +15652,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1884321105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -694, y: 319, z: 0}
+  m_LocalPosition: {x: -598.5, y: 319, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 119135542}
@@ -17997,7 +17984,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2109562956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 694, y: 319, z: 0}
+  m_LocalPosition: {x: 598.5, y: 319, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1782436921}

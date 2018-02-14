@@ -37,7 +37,7 @@ public class Switcher : MonoBehaviour
 	}
 	public void Play()
 	{
-		SceneManager.LoadScene(level[currentLevel].scene.name);
+		SceneManager.LoadScene(level[currentLevel].scene);
 	}
 	public void Next()
     {

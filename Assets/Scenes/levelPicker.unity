@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 298f214bec1c7e747aac167c0e8f894f, type: 3}
-  scene: {fileID: 102900000, guid: 1abb22c5f927e6546a98dd53e69ac1f3, type: 3}
+  scene: level1
   levelName: Infinite Runnin'
   author: Sebek64
 --- !u!1 &397659353
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 522f5efc705d07049beedc7100d5b92c, type: 3}
-  scene: {fileID: 102900000, guid: f2631325f84496a4eb87ba59d4eddcc8, type: 3}
+  scene: level2
   levelName: Psycho Wave
   author: Sebek64
 --- !u!1 &524217917
@@ -1626,6 +1626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 1399c384335e38644931e696bb309243, type: 3}
-  scene: {fileID: 102900000, guid: c9ded87146ae726489a74fbf7ae7634a, type: 3}
+  scene: level0
   levelName: Heartache
   author: Sebek64

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MusicHolder : MonoBehaviour
 {
 	public AudioClip music;
-	public Object scene;
+	public string scene;
 	public string levelName;
 	public string author;
 
